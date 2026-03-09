@@ -1,284 +1,68 @@
-AmanOS — Your Personal Life Operating System
-
-AmanOS is a personal productivity and health tracking web app designed to help you manage your gym routine, nutrition, sleep, study, supplements, and daily schedule in one unified system.
-
-It works like a life operating system where every important habit and metric is tracked daily so you can stay consistent, disciplined, and improve performance over time.
-
-The project is built with vanilla JavaScript and deployed on Vercel.
-
-Live Demo
-
-Visit the app:
-https://amanos.vercel.app
-
-Features
-User System
-
-Mobile number login
-
-First-time profile setup
-
-Local user session management
-
-Basic authentication flow
-
-Personal Profile
-
-Users create a personal profile with:
-
-Name
-
-Age
-
-Height
-
-Weight
-
-Mobile number
-
-This information helps personalize tracking and future analytics.
-
-Daily Life Tracking Modules
-Supplements Tracker
-
-Track daily supplements with reminders.
-
-Features:
-
-Predefined supplement schedule
-
-Custom supplement addition
-
-Completion tracking
-
-Gym Workout Tracker
-
-Log workouts and exercises.
-
-Features:
-
-Exercise logging
-
-Sets / reps / weight tracking
-
-Workout duration
-
-Workout completion status
-
-Sleep Tracker
-
-Track recovery and sleep quality.
-
-Features:
-
-Sleep hours logging
-
-Sleep quality rating
-
-Recovery indicators
-
-Water Intake Tracker
-
-Hydration monitoring with customizable glass size.
-
-Features:
-
-Custom glass size
-
-Dynamic hydration target
-
-Visual progress tracking
-
-Nutrition Tracker
-
-Track food intake and macros.
-
-Features:
-
-Meal logging
-
-Protein / calories / carbs / fat tracking
-
-AI-powered nutrition analyzer
-
-Study Tracker
-
-Designed especially for coding learners.
-
-Features:
-
-Study hours logging
-
-Topics covered
-
-Structured study blocks
-
-Daily Schedule Planner
-
-Full day routine planner.
-
-Includes:
-
-Gym schedule
-
-Study blocks
-
-Meals
-
-Class schedule
-
-Sleep schedule
-
-Notes & Daily Reflection
-
-Write personal notes and reflections about your day.
-
-Features:
-
-Daily journaling
-
-Self-reflection
-
-Day summary
-
-Performance Scoring System
-
-Each day is evaluated using a discipline score (0-100%).
-
-Score factors include:
-
-Supplements completion
-
-Workout completion
-
-Sleep quality
-
-Water intake
-
-Study hours
-
-This creates a daily performance indicator.
-
-Data & Backup
-
-Currently data is stored locally using:
-
-localStorage
-
-Backup features include:
-
-Export all data as JSON
-
-Import backup file
-
-Clear all data
-
-Tech Stack
-
-Frontend
-
-HTML
-
-CSS
-
-Vanilla JavaScript
-
-Deployment
-
-Vercel
-
-Analytics
-
-Vercel Analytics
-
-AI Integration
-
-Claude API (nutrition analyzer)
-
-Current Architecture
-Frontend (AmanOS UI)
-        ↓
-Local Storage Database
-        ↓
-Vercel Hosting
-Future Roadmap
-
-AmanOS is evolving into a full SaaS life tracking platform.
-
-Planned Features
-Backend & Database
-
-Node.js API
-
-MongoDB database
-
-Secure authentication
-
-Cloud Sync
-
-Data saved to server
-
-Access from multiple devices
-
-No data loss
-
-Secure Authentication
-
-OTP login with mobile verification
-
-Session management
-
-Personal Dashboard
-
-User stats overview
-
-Progress tracking
-
-Habit Streak System
-
-Daily streak counter
-
-Consistency scoring
-
-Advanced Analytics
-
-Weekly performance reports
-
-Habit trend analysis
-
-AI Coaching
-
-Fitness suggestions
-
-Nutrition improvements
-
-Study optimization
-
-Mobile Experience
-
-Progressive Web App (PWA)
-
-Installable mobile version
-
-Long-Term Vision
-
-AmanOS aims to become a complete life optimization system where users can track and improve:
-
-Health
-
-Fitness
-
-Learning
-
-Discipline
-
-Productivity
-
-All from a single dashboard.
-
-Author
-
+# 🚀 AmanOS — Personal Life Operating System
+
+AmanOS is a personal productivity and health tracking web application designed to manage gym, nutrition, sleep, study, supplements, and daily routines in one centralized system.
+
+Think of it as a **Life Operating System** that helps you build discipline, track habits, and optimize your daily performance.
+
+## 🌐 Live App
+👉 [https://amanos.vercel.app](https://amanos.vercel.app)
+
+---
+
+## ✨ Features
+
+### 👤 User System
+* Mobile number login
+* First-time profile setup
+* Session management
+* Basic authentication flow
+
+### 🧍 Personal Profile
+Users create a profile including:
+* Name, Age, Height, Weight
+* Mobile number
+* *Used for future analytics and habit tracking.*
+
+### 📊 Life Tracking Modules
+* **💊 Supplements Tracker**: Predefined schedules, custom additions, and completion tracking.
+* **🏋️ Gym Tracker**: Exercise logging (sets/reps/weight) and duration tracking.
+* **😴 Sleep Tracker**: Log hours, quality rating, and recovery indicators.
+* **💧 Water Intake**: Custom glass sizes and dynamic hydration targets.
+* **🍱 Nutrition Tracker**: Macro tracking (Protein/Calories/Carbs/Fats) with AI-powered analysis.
+* **💻 Study Tracker**: Log study hours, topics, and block management.
+
+### 📈 Discipline Score System
+Each day receives a performance score (**0–100%**) based on:
+* Supplements & Workout completion
+* Sleep quality & Water intake
+* Study hours
+
+---
+
+## 🛠 Tech Stack
+* **Frontend:** HTML, CSS, Vanilla JavaScript
+* **Deployment:** Vercel
+* **Analytics:** Vercel Analytics
+* **AI Integration:** Claude API (Nutrition Analyzer)
+
+## 🏗 Current Architecture
+```text
+Frontend (AmanOS UI) -> Local Storage -> Vercel Hosting
+
+🛣 Future Roadmap
+Backend Integration: Node.js API & MongoDB
+Cloud Sync: Access data from any device
+Authentication: Mobile OTP login
+Gamification: Habit streak system & Daily counters
+AI Coaching: Personalized fitness and study guidance
+Mobile Experience: Progressive Web App (PWA)
+
+👨‍💻 Author
 Ashutosh Aman
+👉 GitHub Profile
 
-GitHub
-https://github.com/AmanAshutosh
+
+⭐ Support
+If you like this project, consider starring the repository and sharing feedback!
+
+
