@@ -1,19 +1,18 @@
 // ── LOGIN + PROFILE PROTECTION ──
 
-// get stored login + profile
 const userId = localStorage.getItem("userId");
 const profile = localStorage.getItem("profile");
 
 const page = window.location.pathname;
 
-// not logged in → login page
+// allow login page
 if (!userId && !page.includes("login")) {
-  window.location = "login.html";
+  window.location.href = "login.html";
 }
 
-// logged in but profile missing → profile page
+// allow profile page
 if (userId && !profile && !page.includes("profile")) {
-  window.location = "profile.html";
+  window.location.href = "profile.html";
 }
 
 const profileData = JSON.parse(localStorage.getItem("profile") || "{}");
@@ -309,7 +308,7 @@ let dayData = emptyDay();
 function emptyDay() {
   return {
     supplements: {
-      shilajit: false,
+      Pre_workout: false,
       ash_am: false,
       omega3: false,
       collagen: false,

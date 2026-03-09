@@ -1,103 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<title>AmanOS</title>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>AmanOS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ── HULK LOADER ── -->
+    <div id="loader">
+      <div class="ldr-bg"></div>
+      <div class="ldr-flash"></div>
 
-</head>
-<body>
-
-<!-- ── HULK LOADER ── -->
-<div id="loader">
-  <div class="ldr-bg"></div>
-  <div class="ldr-flash"></div>
-
-  <!-- shockwave rings from ground -->
-  <div class="ldr-rings">
-    <div class="ldr-ring"></div>
-    <div class="ldr-ring"></div>
-    <div class="ldr-ring"></div>
-  </div>
-
-  <!-- floating dust -->
-  <div class="ldr-dust" id="ldr-dust"></div>
-
-  <!-- top label -->
-  <div class="ldr-top-text">
-    <div class="ldr-eyebrow">INITIALISING YOUR TRACKER</div>
-  </div>
-
-  <!-- green energy burst behind hulk -->
-  <div class="ldr-burst"></div>
-
-  <!-- THE HULK — grows from tiny to massive -->
- <div class="ldr-hulk-wrap" id="hulk-figure">
-  <img class="ldr-hulk-img" src="./hulk.png" alt="Hulk"/>
-</div>
-
-  <!-- bottom text -->
-  <div class="ldr-bottom">
-    <div class="ldr-title">SMASH YOUR GOALS 💥</div>
-    <div class="ldr-sub">GYM · CODE · EAT · SLEEP · REPEAT</div>
-    <div class="ldr-bar-wrap"><div class="ldr-bar-fill"></div></div>
-  </div>
-</div>
-
-<div class="shell" id="app">
-
-  <!-- SIDEBAR (desktop) -->
-  <nav class="sidebar" id="sidebar">
-    <div class="sb-logo">
-      <div style="font-size:10px;color:var(--mu);letter-spacing:3px;font-family:var(--mono);">DAILY TRACKER</div>
-      <div style="font-size:19px;font-weight:700;color:var(--fg);font-family:var(--serif);margin-top:3px;">32 · Recomp</div>
-    </div>
-    <div class="sb-items" id="sb-tabs"></div>
-    <div class="sb-foot">
-      <button onclick="toggleYear()" id="year-sb-btn" style="display:flex;align-items:center;gap:10px;background:transparent;border:1px solid var(--bd);border-radius:12px;padding:10px 14px;color:var(--mu2);font-size:14px;width:100%;transition:all .15s;">
-        <span style="font-size:18px;">📅</span> Year View
-      </button>
-    </div>
-  </nav>
-
-  <!-- MAIN COLUMN -->
-  <div class="main-col">
-
-    <!-- TOP BAR -->
-    <div class="topbar">
-      <div id="user-name"></div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-        <button onclick="shiftDate(-1)" style="background:var(--inp);border:none;color:var(--mu2);border-radius:9px;width:34px;height:34px;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">‹</button>
-        <input type="date" id="date-picker" onchange="setDate(this.value)" style="background:transparent;border:none;color:var(--fg);font-size:14px;font-family:var(--sans);outline:none;flex:1;min-width:0;font-weight:500;"/>
-        <button onclick="shiftDate(1)" id="next-btn" style="background:var(--inp);border:none;color:var(--mu2);border-radius:9px;width:34px;height:34px;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">›</button>
-        <button onclick="gotoToday()" id="today-btn" style="display:none;background:rgba(201,245,102,.1);border:1px solid rgba(201,245,102,.3);border-radius:8px;padding:5px 11px;color:var(--ac);font-size:11px;font-family:var(--mono);flex-shrink:0;">Today</button>
-        <button onclick="toggleYear()" class="mobile-year-btn" style="background:var(--inp);border:none;border-radius:9px;width:34px;height:34px;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📅</button>
+      <!-- shockwave rings from ground -->
+      <div class="ldr-rings">
+        <div class="ldr-ring"></div>
+        <div class="ldr-ring"></div>
+        <div class="ldr-ring"></div>
       </div>
-      <!-- score bar -->
-      <div style="display:flex;align-items:center;gap:10px;">
-        <div class="bar-track" style="flex:1;margin-bottom:0;">
-          <div class="bar-fill" id="score-bar" style="width:0%;background:var(--ac);"></div>
+
+      <!-- floating dust -->
+      <div class="ldr-dust" id="ldr-dust"></div>
+
+      <!-- top label -->
+      <div class="ldr-top-text">
+        <div class="ldr-eyebrow">INITIALISING YOUR TRACKER</div>
+      </div>
+
+      <!-- green energy burst behind hulk -->
+      <div class="ldr-burst"></div>
+
+      <!-- THE HULK — grows from tiny to massive -->
+      <div class="ldr-hulk-wrap" id="hulk-figure">
+        <img class="ldr-hulk-img" src="./hulk.png" alt="Hulk" />
+      </div>
+
+      <!-- bottom text -->
+      <div class="ldr-bottom">
+        <div class="ldr-title">SMASH YOUR GOALS 💥</div>
+        <div class="ldr-sub">GYM · CODE · EAT · SLEEP · REPEAT</div>
+        <div class="ldr-bar-wrap"><div class="ldr-bar-fill"></div></div>
+      </div>
+    </div>
+
+    <div class="shell" id="app">
+      <!-- SIDEBAR (desktop) -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sb-logo">
+          <div
+            style="
+              font-size: 10px;
+              color: var(--mu);
+              letter-spacing: 3px;
+              font-family: var(--mono);
+            "
+          >
+            DAILY TRACKER
+          </div>
+          <div
+            style="
+              font-size: 19px;
+              font-weight: 700;
+              color: var(--fg);
+              font-family: var(--serif);
+              margin-top: 3px;
+            "
+          >
+            Aman OS
+          </div>
         </div>
-        <div id="score-label" style="font-size:12px;font-weight:700;color:var(--ac);font-family:var(--mono);min-width:70px;text-align:right;">0% Low</div>
-        <span id="saved-flash" style="font-size:10px;color:var(--ac);font-family:var(--mono);opacity:0;transition:opacity .3s;">✓</span>
+        <div class="sb-items" id="sb-tabs"></div>
+        <div class="sb-foot">
+          <button
+            onclick="toggleYear()"
+            id="year-sb-btn"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              background: transparent;
+              border: 1px solid var(--bd);
+              border-radius: 12px;
+              padding: 10px 14px;
+              color: var(--mu2);
+              font-size: 14px;
+              width: 100%;
+              transition: all 0.15s;
+            "
+          >
+            <span style="font-size: 18px">📅</span> Year View
+          </button>
+        </div>
+      </nav>
+
+      <!-- MAIN COLUMN -->
+      <div class="main-col">
+        <!-- TOP BAR -->
+        <div class="topbar">
+          <div id="user-name"></div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 10px;
+            "
+          >
+            <button
+              onclick="shiftDate(-1)"
+              style="
+                background: var(--inp);
+                border: none;
+                color: var(--mu2);
+                border-radius: 9px;
+                width: 34px;
+                height: 34px;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              ‹
+            </button>
+            <input
+              type="date"
+              id="date-picker"
+              onchange="setDate(this.value)"
+              style="
+                background: transparent;
+                border: none;
+                color: var(--fg);
+                font-size: 14px;
+                font-family: var(--sans);
+                outline: none;
+                flex: 1;
+                min-width: 0;
+                font-weight: 500;
+              "
+            />
+            <button
+              onclick="shiftDate(1)"
+              id="next-btn"
+              style="
+                background: var(--inp);
+                border: none;
+                color: var(--mu2);
+                border-radius: 9px;
+                width: 34px;
+                height: 34px;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              ›
+            </button>
+            <button
+              onclick="gotoToday()"
+              id="today-btn"
+              style="
+                display: none;
+                background: rgba(201, 245, 102, 0.1);
+                border: 1px solid rgba(201, 245, 102, 0.3);
+                border-radius: 8px;
+                padding: 5px 11px;
+                color: var(--ac);
+                font-size: 11px;
+                font-family: var(--mono);
+                flex-shrink: 0;
+              "
+            >
+              Today
+            </button>
+            <button
+              onclick="toggleYear()"
+              class="mobile-year-btn"
+              style="
+                background: var(--inp);
+                border: none;
+                border-radius: 9px;
+                width: 34px;
+                height: 34px;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              📅
+            </button>
+          </div>
+          <!-- score bar -->
+          <div style="display: flex; align-items: center; gap: 10px">
+            <div class="bar-track" style="flex: 1; margin-bottom: 0">
+              <div
+                class="bar-fill"
+                id="score-bar"
+                style="width: 0%; background: var(--ac)"
+              ></div>
+            </div>
+            <div
+              id="score-label"
+              style="
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--ac);
+                font-family: var(--mono);
+                min-width: 70px;
+                text-align: right;
+              "
+            >
+              0% Low
+            </div>
+            <span
+              id="saved-flash"
+              style="
+                font-size: 10px;
+                color: var(--ac);
+                font-family: var(--mono);
+                opacity: 0;
+                transition: opacity 0.3s;
+              "
+              >✓</span
+            >
+          </div>
+          <!-- mini stats -->
+          <div
+            id="mini-stats"
+            style="
+              display: flex;
+              gap: 12px;
+              margin-top: 8px;
+              font-size: 11px;
+              color: var(--mu);
+              font-family: var(--mono);
+              flex-wrap: wrap;
+            "
+          ></div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="scroll-area">
+          <div class="content" id="content"></div>
+        </div>
       </div>
-      <!-- mini stats -->
-      <div id="mini-stats" style="display:flex;gap:12px;margin-top:8px;font-size:11px;color:var(--mu);font-family:var(--mono);flex-wrap:wrap;"></div>
+
+      <!-- BOTTOM NAV (mobile) -->
+      <nav class="bnav" id="bnav"></nav>
     </div>
 
-    <!-- CONTENT -->
-    <div class="scroll-area">
-      <div class="content" id="content"></div>
-    </div>
-  </div>
-
-  <!-- BOTTOM NAV (mobile) -->
-  <nav class="bnav" id="bnav"></nav>
-</div>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
