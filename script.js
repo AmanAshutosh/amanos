@@ -32,8 +32,8 @@ const TABS = [
 
 const SUPPS = [
   {
-    key: "shilajit",
-    label: "Shilajit",
+    key: "Pre workout",
+    label: "Pre workout",
     time: "6:10 am",
     color: "#F59E0B",
     warn: null,
@@ -133,7 +133,7 @@ const SCHEDULE = [
     time: "06:10",
     label: "AM Supplements",
     detail:
-      "Shilajit + Ashwagandha — empty stomach, warm water. DO NOT take ZMA or Omega 3 now.",
+      "Pre workout + Ashwagandha — empty stomach, warm water. DO NOT take ZMA or Omega 3 now.",
     type: "supps",
     color: "#A855F7",
   },
