@@ -17,7 +17,7 @@ if (userId && !profile && !currentPage.includes("profile")) {
   window.location = "profile.html";
 }
 
-
+const profileData = JSON.parse(localStorage.getItem("profile") || "{}");
 
 // ── DATA ──────────────────────────────────────────────────────────────────────
 const TABS = [
@@ -1687,6 +1687,11 @@ function dismissLoader() {
 }
 
 function init() {
+  const nameEl = document.getElementById("user-name");
+
+  if (nameEl && profileData.name) {
+    nameEl.innerText = "Welcome " + profileData.name + " 💪";
+  }
   spawnDust();
   dismissLoader();
   const dp = document.getElementById("date-picker");
