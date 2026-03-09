@@ -22,6 +22,7 @@ const TABS = [
   { key: "study", icon: "💻", label: "Study" },
   { key: "sched", icon: "📋", label: "Plan" },
   { key: "notes", icon: "📝", label: "Notes" },
+  { key: "profile", icon: "👤", label: "Profile" },
   { key: "data", icon: "⚙️", label: "Data" },
 ];
 
@@ -344,6 +345,37 @@ function dispDate(s) {
   });
 }
 
+function renderProfile() {
+  const p = JSON.parse(localStorage.getItem("profile") || "{}");
+
+  let html = secHead("Your Profile", "Your personal info");
+
+  html += `
+  <div class="card">
+  
+    <div class="lbl">Name</div>
+    <div style="font-size:16px;margin-bottom:12px;">${p.name || "-"}</div>
+
+    <div class="lbl">Mobile</div>
+    <div style="font-size:16px;margin-bottom:12px;">${p.mobile || "-"}</div>
+
+    <div class="lbl">Age</div>
+    <div style="font-size:16px;margin-bottom:12px;">${p.age || "-"}</div>
+
+    <div class="lbl">Height</div>
+    <div style="font-size:16px;margin-bottom:12px;">${p.height || "-"} cm</div>
+
+    <div class="lbl">Weight</div>
+    <div style="font-size:16px;margin-bottom:12px;">${p.weight || "-"} kg</div>
+
+  </div>
+
+  <button class="big-btn" onclick="editProfile()">Edit Profile</button>
+  `;
+
+  return html;
+}
+
 // ── STORAGE ───────────────────────────────────────────────────────────────────
 function save(data) {
   localStorage.setItem("day:" + currentDate, JSON.stringify(data));
@@ -559,6 +591,8 @@ function renderTab() {
       return renderSched();
     case "notes":
       return renderNotes();
+    case "profile":
+      return renderProfile();
     case "data":
       return renderData();
     default:
@@ -1357,6 +1391,9 @@ function setNotes(v) {
   upd({ ...dayData, notes: v });
 }
 
+function editProfile() {
+  window.location = "profile.html";
+}
 // ── YEAR ──────────────────────────────────────────────────────────────────────
 function renderYear() {
   const yr = new Date().getFullYear();
