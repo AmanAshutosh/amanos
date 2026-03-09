@@ -1,3 +1,5 @@
+let users = [];
+
 export default function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Only POST allowed" });
@@ -5,10 +7,18 @@ export default function handler(req, res) {
 
   const { mobile } = req.body;
 
-  // create a fake user id for now
-  const userId = mobile + "_user";
+  let user = users.find((u) => u.mobile === mobile);
+
+  if (!user) {
+    user = {
+      id: Date.now().toString(),
+      mobile,
+    };
+
+    users.push(user);
+  }
 
   res.status(200).json({
-    userId: userId,
+    userId: user.id,
   });
 }
