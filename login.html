@@ -101,6 +101,11 @@ opacity:.9;
 </div>
 
 <script>
+    // if already logged in skip login
+
+if(localStorage.getItem("userId")){
+  window.location = "index.html"
+}
 
 /* motivation quotes */
 

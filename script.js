@@ -1,3 +1,24 @@
+// ── LOGIN + PROFILE PROTECTION ──
+
+// get stored login + profile
+const userId = localStorage.getItem("userId");
+const profile = localStorage.getItem("profile");
+
+// detect which page we are currently on
+const currentPage = window.location.pathname;
+
+// if NOT logged in → go to login page
+if (!userId && !currentPage.includes("login")) {
+  window.location = "login.html";
+}
+
+// if logged in but profile NOT filled → go to profile page
+if (userId && !profile && !currentPage.includes("profile")) {
+  window.location = "profile.html";
+}
+
+
+
 // ── DATA ──────────────────────────────────────────────────────────────────────
 const TABS = [
   { key: "supps", icon: "💊", label: "Supps" },
