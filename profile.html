@@ -11,11 +11,15 @@
 
 <h2>Your Profile</h2>
 
-<input id="name" placeholder="Name">
-<input id="age" placeholder="Age">
-<input id="height" placeholder="Height (cm)">
-<input id="weight" placeholder="Weight (kg)">
-<input id="mobile" placeholder="Mobile Number">
+<input id="name" placeholder="Name" required>
+
+<input id="age" type="number" min="10" max="100" placeholder="Age" required>
+
+<input id="height" type="number" min="100" max="250" placeholder="Height (cm)" required>
+
+<input id="weight" type="number" min="30" max="200" placeholder="Weight (kg)" required>
+
+<input id="mobile" type="tel" readonly>
 
 <button onclick="saveProfile()">Save</button>
 

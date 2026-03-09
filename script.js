@@ -4,16 +4,15 @@
 const userId = localStorage.getItem("userId");
 const profile = localStorage.getItem("profile");
 
-// detect which page we are currently on
-const currentPage = window.location.pathname;
+const page = window.location.pathname;
 
-// if NOT logged in → go to login page
-if (!userId && !currentPage.includes("login")) {
+// not logged in → login page
+if (!userId && !page.includes("login")) {
   window.location = "login.html";
 }
 
-// if logged in but profile NOT filled → go to profile page
-if (userId && !profile && !currentPage.includes("profile")) {
+// logged in but profile missing → profile page
+if (userId && !profile && !page.includes("profile")) {
   window.location = "profile.html";
 }
 
