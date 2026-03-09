@@ -1,36 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>AmanOS Login</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AmanOS Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
 
+  <body>
+    <div class="card">
+      <div class="title">AmanOS</div>
+      <div class="sub">Track your discipline</div>
 
+      <div class="quote" id="quote"></div>
 
-</head>
+      <input
+        id="mobile"
+        type="tel"
+        placeholder="Enter mobile number"
+        maxlength="10"
+        pattern="[0-9]{10}"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+        required
+      />
 
-<body>
+      <button onclick="login()">Continue</button>
+    </div>
 
-<div class="card">
-
-<div class="title">AmanOS</div>
-<div class="sub">Track your discipline</div>
-
-<div class="quote" id="quote"></div>
-
-<input
-  id="mobile"
-  type="tel"
-  placeholder="Enter mobile number"
-  maxlength="10"
-  pattern="[0-9]{10}"
-  oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-  required
-/>
-
-<button onclick="login()">Continue</button>
-
-</div>
-
-<script src="login.js"></script>
-</body>
+    <script src="login.js"></script>
+  </body>
 </html>
