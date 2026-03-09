@@ -1,21 +1,16 @@
 // ── LOGIN + PROFILE PROTECTION ──
-
 const userId = localStorage.getItem("userId");
 const profile = localStorage.getItem("profile");
-
+const profileData = JSON.parse(localStorage.getItem("profile") || "{}");
 const page = window.location.pathname;
 
-// allow login page
 if (!userId && !page.includes("login")) {
   window.location.href = "login.html";
 }
 
-// allow profile page
-if (userId && !profile && !page.includes("profile")) {
+if (userId && !profileData.name && !page.includes("profile")) {
   window.location.href = "profile.html";
 }
-
-const profileData = JSON.parse(localStorage.getItem("profile") || "{}");
 
 // ── DATA ──────────────────────────────────────────────────────────────────────
 const TABS = [

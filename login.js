@@ -24,10 +24,9 @@ document.getElementById("quote").innerText = random;
 
 /* login function */
 
-async function login() {
+function login() {
   const mobile = document.getElementById("mobile").value.trim();
 
-  // validation
   if (!mobile) {
     alert("Please enter mobile number");
     return;
@@ -38,27 +37,15 @@ async function login() {
     return;
   }
 
-  try {
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ mobile }),
-    });
+  const userId = Date.now();
 
-    const data = await res.json();
+  localStorage.setItem("userId", userId);
+  localStorage.setItem("mobile", mobile);
 
-    localStorage.setItem("userId", data.userId);
-    localStorage.setItem("mobile", mobile);
-
-    window.location = "index.html";
-  } catch (err) {
-    alert("Login failed");
-    console.error(err);
-  }
+  window.location = "profile.html";
 }
 
+/* enter key login */
 
 document.getElementById("mobile").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {

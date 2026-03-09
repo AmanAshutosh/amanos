@@ -1,3 +1,9 @@
+// protect profile page (must login first)
+
+if (!localStorage.getItem("userId")) {
+  window.location = "login.html";
+}
+
 function saveProfile() {
   const name = document.getElementById("name").value.trim();
   const age = document.getElementById("age").value;
@@ -11,15 +17,14 @@ function saveProfile() {
   }
 
   const profile = {
-    name,
-    age,
-    height,
-    weight,
-    mobile,
+    name: name,
+    age: Number(age),
+    height: Number(height),
+    weight: Number(weight),
+    mobile: mobile,
   };
 
   localStorage.setItem("profile", JSON.stringify(profile));
 
-  // go to dashboard
-  window.location.href = "index.html";
+  window.location = "index.html";
 }
