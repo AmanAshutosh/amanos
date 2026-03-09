@@ -1,36 +1,4 @@
-function login() {
-  const mobile = document.getElementById("mobile").value.trim();
-
-  // check empty
-  if (!mobile) {
-    alert("Please enter your mobile number");
-    return;
-  }
-
-  // check only numbers
-  if (!/^[0-9]+$/.test(mobile)) {
-    alert("Mobile number must contain only digits");
-    return;
-  }
-
-  // check length
-  if (mobile.length !== 10) {
-    alert("Mobile number must be exactly 10 digits");
-    return;
-  }
-
-  // save mobile
-  localStorage.setItem("mobile", mobile);
-
-  // fake login id for now
-  localStorage.setItem("userId", Date.now());
-
-  // redirect
-  window.location.href = "profile.html";
-}
-
-
-// if already logged in skip login
+/* skip login if already logged in */
 
 if (localStorage.getItem("userId")) {
   window.location = "index.html";
@@ -51,28 +19,49 @@ const quotes = [
   "Stay hard.",
 ];
 
-/* show random quote */
-
 const random = quotes[Math.floor(Math.random() * quotes.length)];
-
 document.getElementById("quote").innerText = random;
 
 /* login function */
 
 async function login() {
-  const mobile = document.getElementById("mobile").value;
+  const mobile = document.getElementById("mobile").value.trim();
 
-  const res = await fetch("/api/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ mobile }),
-  });
+  // validation
+  if (!mobile) {
+    alert("Please enter mobile number");
+    return;
+  }
 
-  const data = await res.json();
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert("Mobile number must be exactly 10 digits");
+    return;
+  }
 
-  localStorage.setItem("userId", data.userId);
+  try {
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ mobile }),
+    });
 
-  window.location = "index.html";
+    const data = await res.json();
+
+    localStorage.setItem("userId", data.userId);
+    localStorage.setItem("mobile", mobile);
+
+    window.location = "index.html";
+  } catch (err) {
+    alert("Login failed");
+    console.error(err);
+  }
 }
+
+
+document.getElementById("mobile").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    login();
+  }
+});
