@@ -54,52 +54,19 @@
     <div class="shell" id="app">
       <!-- SIDEBAR (desktop) -->
       <nav class="sidebar" id="sidebar">
-        <div class="sb-logo">
-          <div
-            style="
-              font-size: 10px;
-              color: var(--mu);
-              letter-spacing: 3px;
-              font-family: var(--mono);
-            "
-          >
-            DAILY TRACKER
-          </div>
-          <div
-            style="
-              font-size: 19px;
-              font-weight: 700;
-              color: var(--fg);
-              font-family: var(--serif);
-              margin-top: 3px;
-            "
-          >
-            Aman OS
-          </div>
-        </div>
-        <div class="sb-items" id="sb-tabs"></div>
-        <div class="sb-foot">
-          <button
-            onclick="toggleYear()"
-            id="year-sb-btn"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              background: transparent;
-              border: 1px solid var(--bd);
-              border-radius: 12px;
-              padding: 10px 14px;
-              color: var(--mu2);
-              font-size: 14px;
-              width: 100%;
-              transition: all 0.15s;
-            "
-          >
-            <span style="font-size: 18px">📅</span> Year View
-          </button>
-        </div>
-      </nav>
+  <div class="sb-logo">
+    <div class="sb-tag">DAILY TRACKER</div>
+    <div class="sb-title">Aman OS</div>
+  </div>
+
+  <div class="sb-items" id="sb-tabs"></div>
+
+  <div class="sb-foot">
+    <button onclick="toggleYear()" id="year-sb-btn" class="year-btn">
+      <span class="year-icon">📅</span> Year View
+    </button>
+  </div>
+</nav>
 
       <!-- MAIN COLUMN -->
       <div class="main-col">

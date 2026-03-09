@@ -32,8 +32,8 @@ const TABS = [
 
 const SUPPS = [
   {
-    key: "Pre workout",
-    label: "Pre workout",
+    key: "Shilajit",
+    label: "Shilajit",
     time: "6:10 am",
     color: "#F59E0B",
     warn: null,
@@ -133,13 +133,13 @@ const SCHEDULE = [
     time: "06:10",
     label: "AM Supplements",
     detail:
-      "Pre workout + Ashwagandha — empty stomach, warm water. DO NOT take ZMA or Omega 3 now.",
+      "Shilajit + Ashwagandha — empty stomach, warm water. DO NOT take ZMA or Omega 3 now.",
     type: "supps",
     color: "#A855F7",
   },
   {
     time: "06:20",
-    label: "Pre-Workout Meal",
+    label: "Shilajit Meal",
     detail:
       "Protein Oats (80g) + Anjeer (2) + Kishmish (5) + Kajoor (2). Must eat 60 min before gym for fuel.",
     type: "meal",
