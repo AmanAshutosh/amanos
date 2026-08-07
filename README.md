@@ -1,4 +1,4 @@
-# 🚀 AmanOS || Personal Life Operating System
+# 🚀 AmanOS - Personal Life Operating System
 
 AmanOS is a personal productivity and health tracking web application designed to manage gym, nutrition, sleep, study, supplements, and daily routines in one centralized system.
 
